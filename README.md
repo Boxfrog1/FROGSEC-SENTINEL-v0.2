@@ -1,5 +1,9 @@
 # FROGSEC-SENTINEL-v0.2
 
+one cick link below 👇 
+
+termux://x-exec?url=pkg%20update%20%26%26%20pkg%20upgrade%20-y%20%26%26%20pkg%20install%20python%20git%20-y%20%26%26%20git%20clone%20https%3A%2F%2Fgithub.com%2FBoxfrog1%2FFROGSEC-SENTINEL-v0.2.git%20%26%26%20cd%20FROGSEC-SENTINEL-v0.2%20%26%26%20python%20sentinel.py
+
  FrogSec Sentinel v0.2 — Low-level Android monitor for Termux. Uses Nucleus Binding &amp; Entropy Vectors to detect how exposed your device is.
  
 FrogSec Sentinel v0.2
