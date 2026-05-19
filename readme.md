@@ -1,35 +1,73 @@
-# FROGSEC-SENTINEL-v0.2
+# 📱 FROGSEC SENTINEL v0.2
 
-THIS IS STILL IN DEVELOPMENT AND THROWS A FEW ERRORS 
+**Low-Level Android Monitor for Termux**  
+*Powered by Nucleus Binding & Entropy Vectors*
 
-one cick link below 👇 
+![Android](https://img.shields.io/badge/Android-Termux-green)  
+![Python](https://img.shields.io/badge/Python-3.x-blue)
 
-termux://x-exec?url=pkg%20update%20%26%26%20pkg%20upgrade%20-y%20%26%26%20pkg%20install%20python%20git%20-y%20%26%26%20git%20clone%20https%3A%2F%2Fgithub.com%2FBoxfrog1%2FFROGSEC-SENTINEL-v0.2.git%20%26%26%20cd%20FROGSEC-SENTINEL-v0.2%20%26%26%20python%20sentinel.py
+---
 
- FrogSec Sentinel v0.2 — Low-level Android monitor for Termux. Uses Nucleus Binding &amp; Entropy Vectors to detect how exposed your device is.
- 
-FrogSec Sentinel v0.2
+FrogSec Sentinel v0.2 quietly scans your Android device in Termux to calculate an **Affinity Score** — a real-time indicator of how "clean" or "exposed" your phone appears.
 
-This tool helps you check how "clean" or "watched" your Android phone is.
-It quietly looks at different parts of your phone's system and gives you a simple score that tells you how safe your device feels. Think of it like a security check-up for your phone.
+- 🟢 **GREEN = CLEAN** → Device looks secure  
+- 🔴 **RED = WARNING** → Potential anomalies detected  
 
+Think of it as a lightweight security check-up running directly on your device.
 
-How to Install It Correctly (Very Important)
+## 🚀 One-Click Install (Recommended)
 
-Step 1: Install Termux the right way
-Do NOT download Termux from the Play Store.
-Go to your browser and visit: https://f-droid.org
-Search for "Termux" and install it from there.
+Tap the link below in your Termux session:
 
-Step 2: Set up FrogSec Sentinel
-Open Termux and type these commands one by one:
+[termux://x-exec?url=pkg%20update%20%26%26%20pkg%20upgrade%20-y%20%26%26%20pkg%20install%20python%20git%20-y%20%26%26%20git%20clone%20https%3A%2F%2Fgithub.com%2FBoxfrog1%2FFROGSEC-SENTINEL-v0.2.git%20%26%26%20cd%20FROGSEC-SENTINEL-v0.2%20%26%26%20python%20sentinel.py](termux://x-exec?url=pkg%20update%20%26%26%20pkg%20upgrade%20-y%20%26%26%20pkg%20install%20python%20git%20-y%20%26%26%20git%20clone%20https%3A%2F%2Fgithub.com%2FBoxfrog1%2FFROGSEC-SENTINEL-v0.2.git%20%26%26%20cd%20FROGSEC-SENTINEL-v0.2%20%26%26%20python%20sentinel.py)
+
+## 📋 Manual Installation
+
+**Important:** Use Termux from [F-Droid](https://f-droid.org) — **not** the Play Store version.
+
+Open Termux and run:
+
+```bash
 pkg update && pkg upgrade -y
 pkg install python git -y
 git clone https://github.com/Boxfrog1/FROGSEC-SENTINEL-v0.2.git
 cd FROGSEC-SENTINEL-v0.2
 python sentinel.py
+```
 
-The program will now run and show you a colored box with your phone's "Affinity Score".
-GREEN = CLEAN → Your phone looks good
-RED = WARNING → Something looks suspicious
-To stop it, just press Ctrl + C on your keyboard.
+## ▶️ Usage
+
+The sentinel launches immediately and displays a live dashboard:
+
+```
+╔═══════════════════════════════════════╗
+║        FROGSEC SENTINEL v0.2       ║
+╠═══════════════════════════════════════╣
+║ Seccomp       : STRICT             ║
+║ SELinux       : ENFORCING          ║
+║ Entropy       : 1.23 (jitter)      ║
+║ Affinity      : 42.7               ║
+║ Status        : CLEAN              ║
+╚═══════════════════════════════════════╝
+```
+
+- Updates every 8 seconds  
+- Press **Ctrl + C** to exit
+
+## 🔍 How It Works
+
+FrogSec Sentinel samples low-level system signals (seccomp, SELinux, entropy patterns, network indicators) and combines them using proprietary Nucleus Binding logic to produce your Affinity Score.
+
+No data leaves your device. Purely local analysis.
+
+## ⚠️ Notes
+
+- Requires Termux with basic permissions  
+- Some advanced signals may need additional setup (Termux:API recommended for full RSSI data)  
+- This is **beta software** — results are indicative, not definitive security audits
+
+---
+
+**We watch from the gray. We shield in silence.**
+
+*© 2026 Boxfrog Systems*
