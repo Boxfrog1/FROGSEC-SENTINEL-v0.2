@@ -35,24 +35,28 @@ cd FROGSEC-SENTINEL-v0.2
 python sentinel.py
 ```
 
-## ▶️ Usage
+### Termux:API (Recommended for --real mode)
 
-The sentinel launches immediately and displays a live dashboard:
+For full RSSI and network signal data in real mode:
 
-```
-╔═══════════════════════════════════════╗
-║        FROGSEC SENTINEL v0.2       ║
-╠═══════════════════════════════════════╣
-║ Seccomp       : STRICT             ║
-║ SELinux       : ENFORCING          ║
-║ Entropy       : 1.23 (jitter)      ║
-║ Affinity      : 42.7               ║
-║ Status        : CLEAN              ║
-╚═══════════════════════════════════════╝
+```bash
+pkg install termux-api
 ```
 
-- Updates every 8 seconds  
-- Press **Ctrl + C** to exit
+Grant the permission prompt in Android Settings when it appears.
+
+## ▶️ Usage & Modes
+
+```bash
+python sentinel.py --mode demo   # Safe mode (no risky system calls)
+python sentinel.py --mode real   # Full checks (default, may log warnings)
+```
+
+**Default:** real mode
+
+The sentinel launches immediately and displays a live dashboard (updates every 8 seconds). Press **Ctrl + C** to exit.
+
+Logs are saved to `sentinel.log` in the current directory.
 
 ## 🔍 How It Works
 
@@ -63,7 +67,7 @@ No data leaves your device. Purely local analysis.
 ## ⚠️ Notes
 
 - Requires Termux with basic permissions  
-- Some advanced signals may need additional setup (Termux:API recommended for full RSSI data)  
+- --real mode performs best with Termux:API installed  
 - This is **beta software** — results are indicative, not definitive security audits
 
 ---
